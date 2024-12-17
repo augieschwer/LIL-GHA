@@ -3,3 +3,7 @@
 hello.yaml
 ## Ch02
 first.yaml
+## Ch03
+100daysofcode.py
+
+syntax-check.yml
