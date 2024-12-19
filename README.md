@@ -11,3 +11,5 @@ syntax-check.yml
 build-tomcat.yml
 
 environment-variables.yml
+
+secrets.yml
