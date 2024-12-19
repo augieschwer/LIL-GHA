@@ -1,7 +1,7 @@
 name: challenge
 on: push
 env:
-  FILE_NAME: hello-server
+  FILE_NAME: hello-server.go
 jobs:
   package:
     name: Package
