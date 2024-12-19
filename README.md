@@ -13,3 +13,9 @@ build-tomcat.yml
 environment-variables.yml
 
 secrets.yml
+
+artifacts.yml
+
+hello-server.go
+
+test.sh
