@@ -19,3 +19,5 @@ artifacts.yml
 hello-server.go
 
 test.sh
+
+challenge.yml

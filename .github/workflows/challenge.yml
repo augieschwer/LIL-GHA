@@ -1,0 +1,15 @@
+name: challenge
+on: push
+env:
+  FILE_NAME: hello-server
+jobs:
+  package:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{env.FILE_NAME}}
+        path: ${{env.FILE_NAME}}
