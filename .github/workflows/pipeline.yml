@@ -17,6 +17,8 @@ jobs:
       run: |
         flake8 --ignore=E501,E231 *.py
         pylint --disable=C0301 --disable=C0326 *.py
+      working-directory: ./app
     - name: Run unit tests
       run: |
         python -m unittest --verbose --failfast
+      working-directory: ./app
