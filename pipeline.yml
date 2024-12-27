@@ -39,4 +39,5 @@ jobs:
         gcloud auth configure-docker
         gcloud info
     - name: Build and tag image
-      run: echo "gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest"
+      run: docker build -t "gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest" .
+      working-directory: ./app
