@@ -41,3 +41,6 @@ jobs:
     - name: Build and tag image
       run: docker build -t "gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest" .
       working-directory: ./app
+    - name: Push to GCR
+      run: docker push gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest
+      working-directory: ./app
