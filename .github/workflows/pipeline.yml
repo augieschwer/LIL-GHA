@@ -34,4 +34,6 @@ jobs:
     - name: Setup GCloud
       uses: google-github-actions/setup-gcloud@v2
     - name: Use gcloud CLI
-      run: gcloud info
+      run: |
+        gcloud auth configure-docker
+        gcloud info
