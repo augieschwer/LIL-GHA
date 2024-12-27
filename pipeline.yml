@@ -22,3 +22,16 @@ jobs:
       run: |
         python -m unittest --verbose --failfast
       working-directory: ./app
+  
+  build_image:
+    needs: lint
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v1
+    - uses: google-github-actions/auth@v2
+      with:
+        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+    - name: Setup GCloud
+      uses: google-github-actions/setup-gcloud@v2
+    - name: Use gcloud CLI
+      run: gcloud info
