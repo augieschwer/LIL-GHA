@@ -22,6 +22,8 @@ test.sh
 
 challenge.yml
 ## Ch04
+pipeline.yaml
+
 app/
 
 app.py
