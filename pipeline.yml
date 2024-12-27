@@ -29,6 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: google-github-actions/auth@v2
+      id: gauth
       with:
         credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
     - name: Setup GCloud
@@ -38,4 +39,4 @@ jobs:
         gcloud auth configure-docker
         gcloud info
     - name: Build and tag image
-      run: echo "gcr.io/${{ jobs.build_image.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest"
+      run: echo "gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest"
