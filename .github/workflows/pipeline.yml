@@ -37,3 +37,5 @@ jobs:
       run: |
         gcloud auth configure-docker
         gcloud info
+    - name: Build and tag image
+      run: echo "gcr.io/${{ jobs.build_image.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest"
