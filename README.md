@@ -35,3 +35,10 @@ requirements.txt
 test\_app.py
 test\_cyclones.py
 
+### Permissions in GCP
+
+Artifact Registry Create-on-Push Writer
+
+Cloud Run Admin
+
+Service Account User
