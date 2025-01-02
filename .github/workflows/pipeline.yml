@@ -44,3 +44,20 @@ jobs:
     - name: Push to GCR
       run: docker push gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest
       working-directory: ./app
+
+  test_image:
+    needs: build_image
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: google-github-actions/auth@v2
+      id: gauth
+      with:
+        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+    - name: Setup GCloud
+      uses: google-github-actions/setup-gcloud@v2
+    - name: Use gcloud CLI
+      run: |
+        gcloud auth configure-docker
+        gcloud info
+    - name: Run unit tests in container
+      run: docker run "gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.APPLICATION_NAME }}:latest" -m unittest --verbose --failfast
