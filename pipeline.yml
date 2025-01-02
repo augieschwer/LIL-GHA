@@ -77,5 +77,4 @@ jobs:
         gcloud auth configure-docker
         gcloud info
     - name: Deploy to Cloud Run
-      run: gcloud run deploy ${{ env.APPLICATION_NAME }} --image=gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest --platform=managed --allow-unauthenticated
-
+      run: gcloud run deploy ${{ env.APPLICATION_NAME }} --region=us-west1 --image=gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest --platform=managed --allow-unauthenticated
