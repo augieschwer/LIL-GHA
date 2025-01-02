@@ -78,3 +78,7 @@ jobs:
         gcloud info
     - name: Deploy to Cloud Run
       run: gcloud run deploy ${{ env.APPLICATION_NAME }} --region=us-west1 --image=gcr.io/${{ steps.gauth.outputs.project_id }}/${{ env.APPLICATION_NAME }}:latest --platform=managed --allow-unauthenticated
+    - name: Test deployment
+      run: |
+        DEPLOY_URL=$(gcloud run services describe app2 --platform=managed --region=us-west1 | grep https)
+        curl -sL --max-time 300 -o /dev/null -w "%{http_code}" $DEPLOY_URL | grep 200 || exit 1
