@@ -10,3 +10,15 @@ jobs:
     - name: run
       run: python ./hello.py
       working-directory: ./hello
+  build:
+    needs: test
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: hello
+        path: ./hello/hello.py
