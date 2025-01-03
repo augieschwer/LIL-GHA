@@ -36,6 +36,13 @@ requirements.txt
 test\_app.py
 test\_cyclones.py
 
+### Challenge
+
+hello/
+
+hello.py
+hello.yml
+
 ### Permissions in GCP
 
 Artifact Registry Create-on-Push Writer
