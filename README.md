@@ -1,4 +1,4 @@
-# ![build status](https://github.com/augieschwer/LIL-GHA/actions/workflows/pipeline.yml/badge.svg)
+# ![build status](https://github.com/augieschwer/LIL-GHA/actions/workflows/hello.yml/badge.svg)
 # LinkedIn Learning: Learning Github Actions
 ## Ch01
 hello.yaml
