@@ -50,3 +50,8 @@ Artifact Registry Create-on-Push Writer
 Cloud Run Admin
 
 Service Account User
+
+## Ch05
+custom/Dockerfile
+custom/entrypoint.sh
+
